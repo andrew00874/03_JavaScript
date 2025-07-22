@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript 실습</title>
+  </head>
+  <body>
+    <!-- 각 문제의 HTML 코드를 여기에 붙여넣기 -->
+    <button type="button" onclick="첫번째함수()">클릭해보세요!</button>
+    <button type="button" onclick="텍스트변경()">텍스트 바꾸기</button>
+    <div id="메시지영역">여기 텍스트가 바뀔 예정입니다.</div>
+    <button type="button" onclick="배경색변경('pink')">분홍색</button>
+    <button type="button" onclick="배경색변경('lightgreen')">연두색</button>
+    <button type="button" onclick="배경색변경('lightyellow')">노란색</button>
+    <button type="button" onclick="배경색변경('white')">원래색</button>
+    <input type="text" id="이름입력" placeholder="이름을 입력하세요" />
+    <button type="button" onclick="인사하기()">인사하기</button>
+    <div id="인사결과"></div>
+
+    <script>
+      // 여기에 JavaScript 함수들을 작성하세요!
+
+      // 예시:
+      // function 첫번째함수() {
+      //     alert("안녕하세요!");
+      // }
+      function 첫번째함수() {
+        alert("안녕하세요!");
+      }
+      function 텍스트변경() {
+        const 메시지영역 = document.getElementById("메시지영역");
+        메시지영역.innerHTML = "새로운 메시지!";
+      }
+      function 배경색변경(색상) {
+        const body = document.querySelector("body");
+        body.style.backgroundColor = 색상;
+      }
+      function 인사하기(){
+        const 이름 = document.getElementById("이름입력");
+        인사결과.innerHTML = `안녕하세요, ${이름.value} 님!👋`;
+      }
+    </script>
+  </body>
+</html>
