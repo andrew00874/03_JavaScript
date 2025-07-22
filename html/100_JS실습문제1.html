@@ -17,7 +17,12 @@
     <input type="text" id="이름입력" placeholder="이름을 입력하세요" />
     <button type="button" onclick="인사하기()">인사하기</button>
     <div id="인사결과"></div>
-
+    <input type="number" id="숫자1" placeholder="첫 번째 숫자" />
+    <input type="number" id="숫자2" placeholder="두 번째 숫자" />
+    <button type="button" onclick="계산하기('+')">더하기</button>
+    <button type="button" onclick="계산하기('-')">빼기</button>
+    <button type="button" onclick="계산하기('*')">곱하기</button>
+    <div id="계산결과"></div>
     <script>
       // 여기에 JavaScript 함수들을 작성하세요!
 
@@ -36,9 +41,14 @@
         const body = document.querySelector("body");
         body.style.backgroundColor = 색상;
       }
-      function 인사하기(){
+      function 인사하기() {
         const 이름 = document.getElementById("이름입력");
         인사결과.innerHTML = `안녕하세요, ${이름.value} 님!👋`;
+      }
+      function 계산하기(연산){
+        const number1 = document.getElementById("숫자1");
+        const number2 = document.getElementById("숫자2");
+        
       }
     </script>
   </body>
