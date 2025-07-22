@@ -1,55 +1,139 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript 실습</title>
-  </head>
-  <body>
-    <!-- 각 문제의 HTML 코드를 여기에 붙여넣기 -->
-    <button type="button" onclick="첫번째함수()">클릭해보세요!</button>
-    <button type="button" onclick="텍스트변경()">텍스트 바꾸기</button>
-    <div id="메시지영역">여기 텍스트가 바뀔 예정입니다.</div>
-    <button type="button" onclick="배경색변경('pink')">분홍색</button>
-    <button type="button" onclick="배경색변경('lightgreen')">연두색</button>
-    <button type="button" onclick="배경색변경('lightyellow')">노란색</button>
-    <button type="button" onclick="배경색변경('white')">원래색</button>
-    <input type="text" id="이름입력" placeholder="이름을 입력하세요" />
-    <button type="button" onclick="인사하기()">인사하기</button>
-    <div id="인사결과"></div>
-    <input type="number" id="숫자1" placeholder="첫 번째 숫자" />
-    <input type="number" id="숫자2" placeholder="두 번째 숫자" />
-    <button type="button" onclick="계산하기('+')">더하기</button>
-    <button type="button" onclick="계산하기('-')">빼기</button>
-    <button type="button" onclick="계산하기('*')">곱하기</button>
-    <div id="계산결과"></div>
-    <script>
-      // 여기에 JavaScript 함수들을 작성하세요!
 
-      // 예시:
-      // function 첫번째함수() {
-      //     alert("안녕하세요!");
-      // }
-      function 첫번째함수() {
-        alert("안녕하세요!");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript 실습</title>
+</head>
+
+<body>
+  <!-- 각 문제의 HTML 코드를 여기에 붙여넣기 -->
+  <button type="button" onclick="첫번째함수()">클릭해보세요!</button>
+  <button type="button" onclick="텍스트변경()">텍스트 바꾸기</button>
+  <div id="메시지영역">여기 텍스트가 바뀔 예정입니다.</div>
+  <button type="button" onclick="배경색변경('pink')">분홍색</button>
+  <button type="button" onclick="배경색변경('lightgreen')">연두색</button>
+  <button type="button" onclick="배경색변경('lightyellow')">노란색</button>
+  <button type="button" onclick="배경색변경('white')">원래색</button>
+  <input type="text" id="이름입력" placeholder="이름을 입력하세요" />
+  <button type="button" onclick="인사하기()">인사하기</button>
+  <div id="인사결과"></div>
+  <input type="number" id="숫자1" placeholder="첫 번째 숫자" />
+  <input type="number" id="숫자2" placeholder="두 번째 숫자" />
+  <button type="button" onclick="계산하기('+')">더하기</button>
+  <button type="button" onclick="계산하기('-')">빼기</button>
+  <button type="button" onclick="계산하기('*')">곱하기</button>
+  <div id="계산결과"></div>
+  <img id="조절이미지" src="image.jpg" alt="샘플 이미지">
+  <button type="button" onclick="이미지크기조절('100px')">작게</button>
+  <button type="button" onclick="이미지크기조절('200px')">보통</button>
+  <button type="button" onclick="이미지크기조절('300px')">크게</button>
+  <div id="스타일텍스트">이 텍스트의 스타일이 바뀝니다! abcdefg</div>
+  <button type="button" onclick="글자스타일변경('red', '30px', 'bold')">빨간색 크게</button>
+  <button type="button" onclick="글자스타일변경('blue', '20px', 'normal')">파란색 보통</button>
+  <button type="button" onclick="글자스타일변경('green', '15px', 'italic')">초록색 기울임</button>
+  <button type="button" onclick="시간보여주기()">현재 시간 확인</button>
+  <div id="시간표시"></div>
+  <button type="button" onclick="토글기능()">숨기기/보이기</button>
+  <div id="토글박스">👋 안녕하세요! 저를 숨겨보세요!</div>
+  <div id="게임문제">🎯 빨간색 버튼을 찾아서 클릭하세요!</div>
+  <button type="button" onclick="게임체크('red')" style="background-color: red;">빨간색</button>
+  <button type="button" onclick="게임체크('blue')" style="background-color: blue;">파란색</button>
+  <button type="button" onclick="게임체크('green')" style="background-color: green;">초록색</button>
+  <div id="게임결과"></div>
+
+  <script>
+    function 첫번째함수() {
+      alert("안녕하세요!");
+    }
+    function 텍스트변경() {
+      const 메시지영역 = document.getElementById("메시지영역");
+      메시지영역.innerHTML = "새로운 메시지!";
+    }
+    function 배경색변경(색상) {
+      const body = document.querySelector("body");
+      body.style.backgroundColor = 색상;
+    }
+    function 인사하기() {
+      const 이름 = document.getElementById("이름입력");
+      인사결과.innerHTML = `안녕하세요, ${이름.value} 님!👋`;
+    }
+    function 계산하기(연산) {
+      const number1 = document.getElementById("숫자1").value;
+      const number2 = document.getElementById("숫자2").value;
+      let result = 0;
+      if (연산 === '+') {
+        result = Number(number1) + Number(number2);
+      } else if (연산 === '-') {
+        result = Number(number1) - Number(number2);
+      } else if (연산 === '*') {
+        result = Number(number1) * Number(number2);
       }
-      function 텍스트변경() {
-        const 메시지영역 = document.getElementById("메시지영역");
-        메시지영역.innerHTML = "새로운 메시지!";
+
+      계산결과.innerHTML = `계산결과는 ${result} 입니다.`;
+    }
+    function 이미지크기조절(크기) {
+      const 이미지 = document.getElementById("조절이미지");
+      switch (크기) {
+        case '100px':
+          이미지.style.width = '100px';
+          이미지.style.height = '100px';
+          break;
+        case '200px':
+          이미지.style.width = '200px';
+          이미지.style.height = '200px';
+          break;
+        case '300px':
+          이미지.style.width = '300px';
+          이미지.style.height = '300px';
+          break;
       }
-      function 배경색변경(색상) {
-        const body = document.querySelector("body");
-        body.style.backgroundColor = 색상;
+    }
+    function 글자스타일변경(색상, 크기, 굵기) {
+      const 스타일변경 = document.getElementById("스타일텍스트");
+      스타일변경.style.color = 색상;
+      스타일변경.style.fontsize = 크기;
+      if (굵기 == 'italic') {
+        스타일변경.style.fontStyle = 굵기;
+      } else {
+        스타일변경.style.fontWeight = 굵기;
+        스타일변경.style.fontStyle = 'normal';
       }
-      function 인사하기() {
-        const 이름 = document.getElementById("이름입력");
-        인사결과.innerHTML = `안녕하세요, ${이름.value} 님!👋`;
+    }
+    function 시간보여주기() {
+      const now = new Date();
+
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const day = now.getDate();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const second = now.getSeconds();
+
+      const timestring = `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes}분 ${second}초 입니다.`;
+      const display = document.getElementById("시간표시");
+      display.innerHTML = timestring;
+    }
+    function 토글기능() {
+      const hiding = document.getElementById("토글박스");
+      if (hiding.style.display !== 'none') {
+        hiding.style.display = 'none';
       }
-      function 계산하기(연산){
-        const number1 = document.getElementById("숫자1");
-        const number2 = document.getElementById("숫자2");
-        
+      else {
+        hiding.style.display = 'block';
       }
-    </script>
-  </body>
+    }
+    function 게임체크(선택색상) {
+      const answer = document.getElementById("게임결과");
+      if (선택색상 === 'red') {
+        answer.innerHTML = "정답!";
+      }
+      else {
+        answer.innerHTML = "틀렸습니다!";
+      }
+    }
+  </script>
+</body>
+
 </html>
