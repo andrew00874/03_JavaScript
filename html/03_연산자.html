@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_연산자</title>
+    <link rel="stylesheet" href="../css/03_연산자.css">
+</head>
+<body>
+    <h1>연산자(Operator)</h1>
+    <h3>산술 연산자 + 계산 만들기</h3>
+
+    <pre>
+        +, -, *, %(modulo), /
+    </pre>
+    <div class="계산기">
+        <div class="row">
+            <label>첫 번째 값 :
+                <input type="number" id="input1" /> <br>
+            </label>
+            <label>두 번째 값 :
+                <input type="number" id="input2" /> <br>
+            </label>
+        </div>
+        <div class="row btn-row">
+            <!-- 버튼 클릭 시 pusFn() 함수 호출 (실행)-->
+             <button onclick="plusFn()">+</button>
+        </div>
+    </div>
+    <div class="row">
+        <h2>result : <span id="계산결과">100</span></h2>
+    </div>
+</body>
+</html>
