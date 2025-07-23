@@ -1,37 +1,135 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>조건문 실습문제</title>
-</head>
-<body>
+  </head>
+  <style>
+    code {
+      font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono",
+        "Ubuntu Mono", monospace;
+      background-color: #272822; /* Dark background */
+      color: #f8f8f2; /* Default text color (light gray) */
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      line-height: 1.6;
+      display: block;
+      overflow-x: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    pre {
+      background-color: #ff6b6b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  <body>
     <h1>조건문 실습문제</h1>
-    
     <h4>실제 상황 1탄</h4>
     <p>친구 : OO아~ 돈좀 빌려줘</p>
     <p>나 : 얼마 필요한대?</p>
-    <p>친구 :
-        <input type="number" id="howmuch" /> 원만 빌려줘
-    </p>
+    <p>친구 : <input type="number" id="howmuch" /> 원만 빌려줘</p>
     <p>나 : 확인해볼게</p>
     <button type="button" onclick="잔액확인하기()">잔액확인하기</button>
     <script>
-        function 잔액확인하기(){
-            // 1. 친구가 빌려달라는 금액 javaScript에서 확인하기
+      function 잔액확인하기() {
+        // 1. 친구가 빌려달라는 금액 javaScript에서 확인하기
 
-            // 2. 만약에 친구가 빌려달라는 금액이 5000원이상이면
-            // '잔액이 없어서 힘들 것 같아.'
-            // 5000원 이하면 '언제까지 갚을건데?'
-            // alert로 메시지 띄우기
-            // if-else문 사용
-            money = document.getElementById("howmuch").value;
-            if (money > 4999) {
-                alert("잔액이 없어서 힘들 것 같아.");
-            } else {
-                alert("언제까지 갚을건데?");
-            }
+        // 2. 만약에 친구가 빌려달라는 금액이 5000원이상이면
+        // '잔액이 없어서 힘들 것 같아.'
+        // 5000원 이하면 '언제까지 갚을건데?'
+        // alert로 메시지 띄우기
+        // if-else문 사용
+        const money = document.getElementById("howmuch").value;
+        if (money > 4999) {
+          alert("잔액이 없어서 힘들 것 같아.");
+        } else {
+          alert("언제까지 갚을건데?");
         }
+      }
     </script>
-</body>
+    <h4>홀 / 짝 확인하기</h4>
+    <input type="number" id="input2" />
+    <button type="button" onclick="홀짝기능()">확인하기</button>
+
+    <script>
+      function 홀짝기능() {
+        const num2 = document.getElementById("input2");
+        const val2 = Number(num2.value);
+        if (val2 % 2 == 0) {
+          alert("숫자는 짝수입니다!");
+        } else {
+          alert("숫자는 홀수입니다!");
+        }
+      }
+    </script>
+    <h1>if (만약에) - else if(아니라면 이렇게, 저렇게) else(모두 아니면)</h1>
+    <pre>
+        <code>
+            if(조건식1){
+                조건식1이 true인 경우에만 실행
+            }
+            else if(조건식 2){
+                위의 if가 false이면서 조건식2가 true인 경우
+            }
+            else{
+                위의 조건문이 모두 false일 때
+            }
+        </code>
+
+        *else if 구문은 원하는 만큼 작성 가능
+
+        *앞선 if/else if문 조건이 false인 경우
+            이후 else if에서 해당 범위는 제외
+    </pre>
+
+    <h3>어린이, 청소년, 성인 구분하기</h3>
+    <pre>
+        나이를 입력 받아
+        0세 ~ 13세 : 어린이
+        14세 ~ 19세 : 청소년
+        20세 ~ 150세 : 성인
+    </pre>
+    나이 : <input type="number" id="inputAge" />
+    <button onclick="체크4()">확인하기</button>
+    <script>
+      const inputAge = document.getElementById("inputAge");
+      function 체크4() {
+        const 받아온나이값 = Number(inputAge.value);
+        if (0 < 받아온나이값 && 받아온나이값 <= 13) {
+          alert("당신은 어린이 입니다.");
+        } else if (13 < 받아온나이값 && 받아온나이값 <= 19) {
+          alert("당신은 청소년 입니다.");
+        } else if (20 <= 받아온나이값 && 받아온나이값 < 151) {
+          alert("당신은 성인입니다.");
+        } else {
+          alert(`잘못 입력 하셨습니다. ${받아온나이값}세가 맞습니까?`);
+        }
+      }
+    </script>
+    <h4>주행비용 계산하기</h4>
+    <p>이동 거리에 따라 주행비용을 계산해주는 프로그램입니다.</p>
+    <p>이동거리 : <input type="number" id="input3" /></p>
+    <button type="button" onclick="주행거리계산기능()">계산하기</button>
+    <script>
+      function 주행거리계산기능() {
+        const input = document.getElementById("input3");
+        const distance = Number(input.value);
+        let cost;
+        if (distance <= 3) {
+          cost = 3000;
+        } else if (distance > 3 && distance <= 10) {
+          cost = 8000;
+        } else if (distance > 10) {
+          cost = 20000;
+        } else {
+          alert("잘못 입력하셨습니다!");
+        }
+        alert(`주행비용은 ${cost}원입니다.`);
+      }
+    </script>
+  </body>
 </html>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>05_조건문</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>조건문(condition)</h1>
     <pre>
         프로그래밍 코드가 해석되는 순서를 제어하는 제어문의 한 종류
         작성된 조건식에 따라서 수행되는 코드를 변경하는 구문
 
     </pre>
-    <hr>
+    <hr />
     <h3>if(만약에...)</h3>
     <pre>
         <code>
@@ -25,38 +25,38 @@
         * 조건문 : 조건식의 결과에 따라 실험을 제어하는 구문(if, switch)
     </pre>
     <h4>입력받은 수가 양수인지 아닌지 검사</h4>
-    <input type="number" id="input1">
+    <input type="number" id="input1" />
     <button type="button" onclick="체크1()">양수인지 아닌지 검사</button>
     <hr />
     <script>
-        const 인풋1 = document.getElementById("input1");
-        // 양수인지 검사하는 기능 설정
-        function 체크1(){
-            const val = Number(인풋1.value); //입력받는 값을 숫자로 변경
+      const 인풋1 = document.getElementById("input1");
+      // 양수인지 검사하는 기능 설정
+      function 체크1() {
+        const val = Number(인풋1.value); //입력받는 값을 숫자로 변경
 
-            // 만약에 클라이언트가 입력한 숫자값이 0보다 클 경우 = true
-            if (val > 0) {
-                alert("클라이언트가 입력한 숫자는 0보다 큰 양수입니다.");
-            } 
-            if (val <= 0) {
-                alert("클라이언트가 입력한 숫자는 0이거나 작은 음수입니다.");
-            }
+        // 만약에 클라이언트가 입력한 숫자값이 0보다 클 경우 = true
+        if (val > 0) {
+          alert("클라이언트가 입력한 숫자는 0보다 큰 양수입니다.");
         }
+        if (val <= 0) {
+          alert("클라이언트가 입력한 숫자는 0이거나 작은 음수입니다.");
+        }
+      }
     </script>
-    
+
     <h4>입력받은 수가 양수인지 아닌지 검사</h4>
-    <input type="number" id="input2">
+    <input type="number" id="input2" />
     <button type="button" onclick="체크2()">양수인지 아닌지 검사</button>
     <script>
-        function 체크2(){
-            const 인풋2 = document.getElementById("input2");
-            const 값 = Number(인풋2.value);
-            if (값 > 0) {
-                alert("양수입니다.");
-            } else {
-                alert("0이거나 음수입니다.")
-            }
+      function 체크2() {
+        const 인풋2 = document.getElementById("input2");
+        const 값 = Number(인풋2.value);
+        if (값 > 0) {
+          alert("양수입니다.");
+        } else {
+          alert("0이거나 음수입니다.");
         }
+      }
     </script>
     <h3>if(만약에) -else(아니면) 문</h3>
     <pre>
@@ -69,5 +69,5 @@
         </code>
         * else 구문에는 조건식을 작성하는 ()가 없다.
     </pre>
-</body>
+  </body>
 </html>
