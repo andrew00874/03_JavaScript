@@ -4,6 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>실습문제 기초 1탄</title>
+    <style>
+      /* 전체 페이지 스타일 */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* 메인 컨테이너 */
+      .container {
+        width: 100%;
+        max-width: 800px;
+      }
+
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      /* 각 문제를 감싸는 카드 스타일 */
+      .problem-container {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-bottom: 30px;
+        border: 1px solid #e0e0e0;
+      }
+
+      h3 {
+        color: #3498db;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+
+      /* 버튼 스타일 */
+      button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 18px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 5px;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      /* 입력창 스타일 */
+      input[type="text"],
+      input[type="number"] {
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 16px;
+        margin: 5px;
+        transition: border-color 0.3s ease;
+        width: calc(50% - 26px); /* 버튼과 너비를 맞추기 위함 */
+      }
+
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        border-color: #3498db;
+        outline: none;
+      }
+
+      /* 결과가 표시되는 영역 스타일 */
+      .result-box {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #eaf6ff;
+        border-radius: 6px;
+        min-height: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        border: 1px dashed #3498db;
+      }
+
+      /* 이미지 스타일 */
+      #조절이미지 {
+        border: 3px solid #ddd;
+        border-radius: 8px;
+        max-width: 100%;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* 토글 박스 스타일 */
+      #토글박스 {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 1.2em;
+        color: #555;
+        margin-top: 15px;
+      }
+
+      /* 미니게임 버튼 텍스트 색상 (배경색과 대비되도록) */
+      #game-buttons button {
+        color: white;
+        font-weight: bold;
+      }
+
+      .buttons{
+        display : flex;
+      }
+    </style>
   </head>
   <body>
     <h1>실습문제 기초 1탄</h1>
@@ -13,10 +139,12 @@
     <button type="button" onclick="텍스트변경()">텍스트 바꾸기</button>
     <div id="메시지영역">여기 텍스트가 바뀔 예정입니다.</div>
     <h3>문제 3 : 배경색 변경하기</h3>
-    <button type="button" onclick="배경색변경('pink')">분홍색</button>
-    <button type="button" onclick="배경색변경('lightgreen')">연두색</button>
-    <button type="button" onclick="배경색변경('lightyellow')">노란색</button>
-    <button type="button" onclick="배경색변경('white')">원래색</button>
+    <buttons>
+      <button type="button" onclick="배경색변경('pink')">분홍색</button>
+      <button type="button" onclick="배경색변경('lightgreen')">연두색</button>
+      <button type="button" onclick="배경색변경('lightyellow')">노란색</button>
+      <button type="button" onclick="배경색변경('white')">원래색</button>
+    </buttons>
     <h3>문제 4 : 이름 입력받고 인사하기</h3>
     <input type="text" id="이름입력" placeholder="이름을 입력하세요" />
     <button type="button" onclick="인사하기()">인사하기</button>
@@ -24,26 +152,32 @@
     <h3>문제 5 : 간단한 계산기</h3>
     <input type="number" id="숫자1" placeholder="첫 번째 숫자" />
     <input type="number" id="숫자2" placeholder="두 번째 숫자" />
-    <button type="button" onclick="계산하기('+')">더하기</button>
-    <button type="button" onclick="계산하기('-')">빼기</button>
-    <button type="button" onclick="계산하기('*')">곱하기</button>
+    <buttons>
+      <button type="button" onclick="계산하기('+')">더하기</button>
+      <button type="button" onclick="계산하기('-')">빼기</button>
+      <button type="button" onclick="계산하기('*')">곱하기</button>
+    </buttons>
     <div id="계산결과"></div>
     <h3>문제 6 : 이미지 크기 조절하기</h3>
     <img id="조절이미지" src="../image/image.jpg" alt="샘플 이미지" />
-    <button type="button" onclick="이미지크기조절('100px')">작게</button>
-    <button type="button" onclick="이미지크기조절('200px')">보통</button>
-    <button type="button" onclick="이미지크기조절('300px')">크게</button>
+    <buttons>
+      <button type="button" onclick="이미지크기조절2('100px', '300px')">작게</button>
+      <button type="button" onclick="이미지크기조절2('200px', '600px')">보통</button>
+      <button type="button" onclick="이미지크기조절2('300px', '900px')">크게</button>
+    </buttons>
     <h3>문제 7 : 글자 스타일 변경하기</h3>
     <div id="스타일텍스트">이 텍스트의 스타일이 바뀝니다!</div>
-    <button type="button" onclick="글자스타일변경('red', '30px', 'bold')">
-      빨간색 크게
-    </button>
-    <button type="button" onclick="글자스타일변경('blue', '20px', 'normal')">
-      파란색 보통
-    </button>
-    <button type="button" onclick="글자스타일변경('green', '15px', 'italic')">
-      초록색 기울임
-    </button>
+    <buttons>
+      <button type="button" onclick="글자스타일변경('red', '30px', 'bold')">
+        빨간색 크게
+      </button>
+      <button type="button" onclick="글자스타일변경('blue', '20px', 'normal')">
+        파란색 보통
+      </button>
+      <button type="button" onclick="글자스타일변경('green', '15px', 'italic')">
+        초록색 기울임
+      </button>
+    </buttons>
     <h3>문제 8 : 현재 시간 보여주기</h3>
     <button type="button" onclick="시간보여주기()">현재 시간 확인</button>
     <div id="시간표시"></div>
@@ -52,29 +186,30 @@
     <div id="토글박스">👋 안녕하세요! 저를 숨겨보세요!</div>
     <h3>문제 10 : 색상 맞추기 미니게임</h3>
     <div id="게임문제">🎯 빨간색 버튼을 찾아서 클릭하세요!</div>
-    <button
-      type="button"
-      onclick="게임체크('red')"
-      style="background-color: red"
-    >
-      빨간색
-    </button>
-    <button
-      type="button"
-      onclick="게임체크('blue')"
-      style="background-color: blue"
-    >
-      파란색
-    </button>
-    <button
-      type="button"
-      onclick="게임체크('green')"
-      style="background-color: green"
-    >
-      초록색
-    </button>
-    <div id="게임결과"></div>
-
+    <buttons>
+      <button
+        type="button"
+        onclick="게임체크('red')"
+        style="background-color: red"
+      >
+        빨간색
+      </button>
+      <button
+        type="button"
+        onclick="게임체크('blue')"
+        style="background-color: blue"
+      >
+        파란색
+      </button>
+      <button
+        type="button"
+        onclick="게임체크('green')"
+        style="background-color: green"
+      >
+        초록색
+      </button>
+      <div id="게임결과"></div>
+    </buttons>
     <script>
       function 첫번째함수() {
         alert("안녕하세요!");
@@ -107,9 +242,16 @@
         res.innerHTML = `계산결과 ${num1} ${연산자} ${num2} = ${ans}`;
       }
       function 이미지크기조절(크기) {
+        // javaScript 내에서 작성하는 스타일은 2순위 스타일이기 때문에 지양
         const img_mod = document.getElementById("조절이미지");
         img_mod.style.width = 크기;
         img_mod.style.height = 크기;
+      }
+      function 이미지크기조절2(가로, 세로) {
+        // javaScript 내에서 작성하는 스타일은 2순위 스타일이기 때문에 지양
+        const img_mod = document.getElementById("조절이미지");
+        img_mod.style.width = 가로;
+        img_mod.style.height = 세로;
       }
       function 글자스타일변경(색상, 크기, 굵기) {
         const st_txt = document.getElementById("스타일텍스트");
@@ -131,13 +273,12 @@
           toggle.style.display = "none";
         }
       }
-      function 게임체크(색상){
+      function 게임체크(색상) {
         const res = document.getElementById("게임결과");
-        if(색상 == 'red'){
-            res.innerHTML = "정답!⭕";
-        }
-        else {
-            res.innerHTML = "땡!❌";
+        if (색상 == "red") {
+          res.innerHTML = "정답!⭕";
+        } else {
+          res.innerHTML = "땡!❌";
         }
       }
     </script>
