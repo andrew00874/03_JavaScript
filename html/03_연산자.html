@@ -52,17 +52,17 @@
             const number1 = document.getElementById("input1").value;
             const number2 = document.getElementById("input2").value;
             
-            alert("number1의 값 : " + number1);
-            alert("number2의 값 : " + number2);
-            /*
-                input 요소에 작성된 값은 무조건 string이라 더했을 때
-                이어쓰기 되는 문제가 발생한다.
+            // alert("number1의 값 : " + number1);
+            // alert("number2의 값 : " + number2);
+            // /*
+            //     input 요소에 작성된 값은 무조건 string이라 더했을 때
+            //     이어쓰기 되는 문제가 발생한다.
 
-                [해결방법]
-                문자열을 숫자로 변환해야함 Number("123") atoi
-            */
-            alert("두 수의 합 : " + (Number(number1) + Number(number2)));
-            alert(Number(number1) + Number(number2));
+            //     [해결방법]
+            //     문자열을 숫자로 변환해야함 Number("123") atoi
+            // */
+            // alert("두 수의 합 : " + (Number(number1) + Number(number2)));
+            // alert(Number(number1) + Number(number2));
             /*
             두 수의 합을 id가 "계산결과"인 요소의 내부글자로 대입하기.
             
@@ -75,7 +75,7 @@
            const result = document.getElementById("계산결과");
            result.innerText = Number(number1) + Number(number2);
         }
-
     </script>
+    <script src="../js/03_연산자_마이너스,곱하기,나누기.js"></script>
 </body>
 </html>

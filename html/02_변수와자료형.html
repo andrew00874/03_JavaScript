@@ -27,9 +27,11 @@
     <hr />
     <h3>javaScript 변수의 종류와 특징</h3>
     <pre>
+        scope : 변수나 함수에 접근할 수 있는 범위
+
         var   : 변수, 변수명 중복 가능, 덮어쓰기 가능, 함수 레벨 scope
-        let   : 변수, 변수명 중복 불가, 블록{} 형태  , 레벨 scope
-        const : 상수, 변수명 중복 불가, 블록{} 형태  , 레벨 scope
+        let   : 변수, 변수명 중복 불가, 블록{} 형태 레벨 scope
+        const : 상수, 변수명 중복 불가, 블록{} 형태 레벨 scope
 
         1순위 : const(JS는 특정 요소를 선택해서 사용하는 경우가 많아 변수에 고정시켜둠)
 
@@ -46,13 +48,14 @@
         JS는 변수 선언 시 별도의 자료형을 지정하지 않음.
         -> 변수에 대입되는 값에 의해서 자료형이 결정됨
         
-        - string(문자열)
-        - number(숫자)                      -> 정수/실수 모두 포함
-        - boolean(논리값)                   -> true(참), false(거짓)
-        - object(객체)                      -> 배열(Array), JS객체{k:v, k:v}
-        - function(함수)
-        - undefined(정의되지 않은 변수)      -> 변수가 선언만 됐을 뿐, 값이 존재하지 않는 변수이름
-
+        - string    (문자열)                 -> 문자들이 나열된 상태
+                                                memory 크기 제한 없이 나열된 상태
+        - number    (숫자)                   -> 정수/실수 모두 포함
+        - boolean   (논리값)                 -> true(참), false(거짓)
+        - object    (객체)                   -> 배열(Array), JS객체{k:v, k:v}
+        - function  (함수)
+        - undefined (정의되지 않은 변수)      -> 변수가 선언만 됐을 뿐, 값이 존재하지 않는 변수이름
+      
         (참고)
         - null (참조하는게 없음)
             -> document.getElementById("오타") (가장 흔한 경우)

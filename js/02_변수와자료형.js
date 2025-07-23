@@ -35,3 +35,30 @@ const number3 = 40;
 number3 = 50;
 
 console.log("number1 의 값 " + number3);
+
+// var의 경우에는 함수(행동, 기능) 내부에 작성하면
+// {} 블록의 개념 관계 없이 어디서든 변수 이름이 호출 가능
+
+function var확인기능(){
+    if(true){
+        var abc = 10;
+    }
+    abc = 20;
+}
+
+function let확인기능(){
+    if(true){
+        let abc = 10;
+        abc = 20;
+    }
+    //if 블록이 끝나 abc가 사라졌으므로, ReferenceError가 발생
+    abc = 30; // ReferenceError
+}
+
+function const확인기능(){
+    if(true){
+        const abc = 10;
+        //선언된 상수에 값을 재할당하려고 해 TypeError가 발생
+        abc = 20; // TypeError
+    }
+}
