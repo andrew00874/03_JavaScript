@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 실습문제</title>
+</head>
+<body>
+    <h1>조건문 실습문제</h1>
+    
+    <h4>실제 상황 1탄</h4>
+    <p>친구 : OO아~ 돈좀 빌려줘</p>
+    <p>나 : 얼마 필요한대?</p>
+    <p>친구 :
+        <input type="number" id="howmuch" /> 원만 빌려줘
+    </p>
+    <p>나 : 확인해볼게</p>
+    <button type="button" onclick="잔액확인하기()">잔액확인하기</button>
+    <script>
+        function 잔액확인하기(){
+            // 1. 친구가 빌려달라는 금액 javaScript에서 확인하기
+
+            // 2. 만약에 친구가 빌려달라는 금액이 5000원이상이면
+            // '잔액이 없어서 힘들 것 같아.'
+            // 5000원 이하면 '언제까지 갚을건데?'
+            // alert로 메시지 띄우기
+            // if-else문 사용
+            money = document.getElementById("howmuch").value;
+            if (money > 4999) {
+                alert("잔액이 없어서 힘들 것 같아.");
+            } else {
+                alert("언제까지 갚을건데?");
+            }
+        }
+    </script>
+</body>
+</html>

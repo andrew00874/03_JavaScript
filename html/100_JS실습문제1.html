@@ -86,7 +86,12 @@
       }
       function 인사하기() {
         const 이름 = document.getElementById("이름입력");
-        인사결과.innerHTML = `안녕하세요, ${이름.value} 님!👋`;
+        인사결과.innerHTML= `안녕하세요, ${이름.value} 님!👋`;
+        인사결과.innerText = `안녕하세요, ${이름.value} 님!👋`;
+        /*
+        innerHTML : 내부에서 HTML 태그를 인식하고 처리
+        innerText : 내부에서 HTML 태그를 인식하지 않고 오직 순수한 텍스트만 인식
+        */
       }
       function 계산하기() {
         const 연산 = document.getElementById("연산자").value;
