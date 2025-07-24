@@ -63,11 +63,13 @@
         border-radius: 5px;
       }
 
-      #chatting-bg > p > big_span {
+      #chatting-bg > p > .big_span {
         background-color: rgb(254, 234, 51);
-        width: 100px;
+        padding : 10px;
+        width: 200px;
         height: 100%;
         border-radius: 5px;
+        display: inline-block;
       }
 
       #chatting-input {
@@ -134,7 +136,7 @@
         if (msg.length < 25){
             newMSG.innerHTML = `<span>${trimmed_msg}</span>`;
         } else {
-            newMSG.innerHTML = `<big_span>${trimmed_msg}</big_span>`;
+            newMSG.innerHTML = `<span class= "big_span">${trimmed_msg}</span>`;
         }
 
         chatBg.appendChild(newMSG);
