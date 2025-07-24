@@ -58,3 +58,30 @@ function 주문완료기능() {
   }
   초기화();
 }
+
+let try_cnt = 0;
+
+function 비밀번호체크() {
+  // while문으로 계속 체크 while문이 false가 될 때 까지 무한 반복
+  let password = document.getElementById("비밀번호입력").value;
+
+  while (password != "1234"){
+    try_cnt++;
+    password = prompt(`비밀번호가 틀렸습니다. 다시 입력하세요. 시도횟수 ${try_cnt}`);
+    if(password == null){
+      document.getElementById("결과창").innerHTML = "로그인이 취소되었습니다.";
+      return;
+    }
+  }
+  try_cnt++;
+  document.getElementById("결과창").innerHTML = `<h3>정답입니다. 시도횟수 ${try_cnt}</h3>`
+  try_cnt = 0;
+  // if (password != "1234") {
+  //   try_cnt++; 
+  //   document.getElementById("결과창").innerHTML=`<h6>다시입력하세요. 시도횟수 ${try_cnt}</h6>`    
+  // } else {
+  // try_cnt++;
+  // document.getElementById("결과창").innerHTML=`<h6>정답입니다. 시도횟수 ${try_cnt}</h6>`
+  // try_cnt = 0;    
+  // }
+}
