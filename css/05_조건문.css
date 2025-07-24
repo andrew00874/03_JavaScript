@@ -1,0 +1,25 @@
+code {
+  font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono",
+    monospace;
+  background-color: #272822; /* Dark background */
+  color: #f8f8f2; /* Default text color (light gray) */
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  line-height: 1.6;
+  display: block;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+pre {
+  background-color: #78d9ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+h1 {
+  background-color: #78ffbc;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

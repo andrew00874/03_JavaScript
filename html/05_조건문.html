@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/05_조건문.css" />
     <title>05_조건문</title>
   </head>
   <body>
@@ -13,7 +14,7 @@
 
     </pre>
     <hr />
-    <h3>if(만약에...)</h3>
+    <h1>if(만약에...)</h1>
     <pre>
         <code>
             if(조건식){
@@ -33,7 +34,7 @@
     <input type="number" id="input2" />
     <button type="button" onclick="체크2()">양수인지 아닌지 검사</button>
 
-    <h3>if(만약에) -else(아니면) 문</h3>
+    <h1>if(만약에) -else(아니면) 문</h1>
     <pre>
         <code>
             if(조건식){
@@ -44,6 +45,32 @@
         </code>
         * else 구문에는 조건식을 작성하는 ()가 없다.
     </pre>
+    나이 : <input type="number" id="inputAge" />
+    <button onclick="체크4()">확인하기</button>
+    <hr />
+    <hr />
+    <hr />
+
+    <h1>switch, case, default</h1>
+    <pre>
+        switch 문
+        - 식 하나의 결과로 많은 경우의 수를 처리할 때 사용하는 조건문
+            -> 식의 결과에 맞는 case 구문이 수행됨
+            <code>
+                switch(식) {<!-- 식의 결과는 정수 or 문자열 -->
+                    case 결과 1:
+                     결과 1의 수행코드;
+                     break;
+                    case 결과 2:
+                     결과 2의 수행코드;
+                     break;
+                    case 결과 3:
+                     결과 3의 수행코드;
+                     break;
+                }
+            </code>
+    </pre>
+
     <script src="../js/05_조건문.js"></script>
   </body>
 </html>
