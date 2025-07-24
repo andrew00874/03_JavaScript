@@ -45,38 +45,34 @@ function 커피주문가능() {
   let name, price, description;
   switch (coffee) {
     case "americano":
-      alert("2,000원입니다.");
       price = "2,000원";
       name = "아메리카노";
       description = "깔끔하고 진한 맛의 기본 커피";
       break;
     case "latte":
-      alert("3,500원입니다.");
       price = "3,500원";
       name = "카페라떼";
       description = "진한 우유맛이 나는 부드러운 커피";
       break;
     case "cappuccino":
-      alert("3,800원입니다.");
       price = "3,800원";
       name = "카푸치노";
       description = "진한 에스프레소와 우유 거품의 조화";
       break;
     case "mocha":
-      alert("4,200원입니다.");
       price = "4,200원";
       name = "카페모카";
       description = "달콤한 초콜릿이 들어간 커피";
       break;
     case "macchiato":
-      alert("4,000원입니다.");
       price = "4,000원";
       name = "마키아토";
       description = "카라멜 시럽이 들어간 달콤한 커피";
       break;
     default:
-      alert("가격 정보 없음");
+      name = "커피 선택 안함";
       price = "가격 정보 없음";
+      description = "커피 선택 안함";
       break;
   }
   /*
