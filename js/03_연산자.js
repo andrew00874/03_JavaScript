@@ -17,21 +17,21 @@ function plusFn() {
   // 코드를 실행하는 중간에 문제가 발생하면 문제를 건너뛰어서
   // 다른 것을 실행하는 것이 아니라
   // 문제가 발생한 지점에서 실행 멈춤
-  alert("number1의 값 : " + number1);
-  alert("number2의 값 : " + number2);
-  /*
-        input 요소에 작성된 값은 무조건 문자열(string) 형태라서
-        더했을 때 이어쓰기 되는 문제가 발생한다.
+//   alert("number1의 값 : " + number1);
+//   alert("number2의 값 : " + number2);
+//   /*
+//         input 요소에 작성된 값은 무조건 문자열(string) 형태라서
+//         더했을 때 이어쓰기 되는 문제가 발생한다.
 
-        [해결방법]
-        문자열(string)을 숫자(number)로 변경하는 방법을 수행
-        데이터 파싱(data parsing) : 데이터의 종류를 바꿈
+//         [해결방법]
+//         문자열(string)을 숫자(number)로 변경하는 방법을 수행
+//         데이터 파싱(data parsing) : 데이터의 종류를 바꿈
 
-        숫자만 작성된 문자열("123")을 진짜 숫자 (123)으로 바꾸는 방법
-        Number("123")  --> 123 */
-  alert("두 수의 합 : " + number1 + number2);
-  alert("두 수의 합 : " + (Number(number1) + Number(number2)));
-  alert(Number(number1) + Number(number2));
+//         숫자만 작성된 문자열("123")을 진짜 숫자 (123)으로 바꾸는 방법
+//         Number("123")  --> 123 */
+//   alert("두 수의 합 : " + number1 + number2);
+//   alert("두 수의 합 : " + (Number(number1) + Number(number2)));
+//   alert(Number(number1) + Number(number2));
 
   /*
         두 수의 합을 id가 "계산결과" 인 요소(결과 변수)의 
@@ -46,4 +46,58 @@ function plusFn() {
   // .value 를 붙여주지 않음
   const result = document.getElementById("계산결과");
   result.innerText = Number(number1) + Number(number2);
+}
+
+/*
+      증가 / 감소 연산자 (++, --)
+*/
+//    증가, 감소할 수를 저장할 변수 선언
+let count = 0;
+const result2 = document.getElementById("result2");
+
+function 증가버튼(){
+      count++;
+      result2.innerText = count;
+}
+function 감소버튼(){
+      count--;
+      result2.innerText = count;
+}
+
+let a = 5;
+let b = 5;
+
+function 전위버튼() {
+      let 원래값 = a;
+      let 결과 = ++a;
+      //textContet => JavaScript에서 HTML 요소의 텍스트요소만 가져오고 설정
+      document.getElementById("전위A").textContent = 원래값;
+      document.getElementById("전위결과").innerHTML = 
+
+      `
+      <pre class="pretty-pre">
+      원래 a 값: ${원래값}
+      ++a의 결과: ${a}
+      현재 a의 값: ${결과}
+      -> 먼저 증가시킨 후 그 값을 반환
+      </pre>
+      
+      `;
+}
+
+function 후위버튼() {
+      let 원래값 = b;
+      let 결과 = b++;
+      //textContet => JavaScript에서 HTML 요소의 텍스트요소만 가져오고 설정
+      document.getElementById("후위B").textContent = 원래값;
+      document.getElementById("후위결과").innerHTML = 
+      `
+      <pre class="pretty-pre">
+      원래 b 값: ${원래값}
+      b++의 결과: ${b}
+      현재 b의 값: ${결과}
+      -> 먼저 반환한 후 값을 증가
+      </pre>
+      
+      `;
 }

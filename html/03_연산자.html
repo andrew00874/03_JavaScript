@@ -10,7 +10,7 @@
     <h1>연산자(Operator)</h1>
     <h3>산술 연산자 + 계산 만들기</h3>
 
-    <pre>
+    <pre class="pretty-pre">
         +, -, *, %(modulo), /
     </pre>
     <div class="계산기">
@@ -34,48 +34,27 @@
     <div class="row">
         <h2>result : <span id="계산결과">100</span></h2>
     </div>
-    <script>
-        //변수 선언
+    <div class="row">
+        <h2>증가/감소 버튼 : <span id="result2"></span></h2>
+    </div>
+    <div class="row btn-row">
+        <button onclick="증가버튼()">증가</button>
+        <button onclick="감소버튼()">감소</button>
+    </div>
 
-        //document(문서)    : HTML 문서(file) 내에서
-        //get               : 가져오다, 얻다
-        //Element           : HTML 요소
-        //ById              : ID가 일치하는
+    <h3>전위연산자 (++변수이름)</h3>
+    <p>현재 a 값 : <span id="전위A">5</span></p>
+    <button onclick="전위버튼()">++a 실행</button>
+    <div id="전위결과">결과가 여기에 표시됩니다.</div>
 
-        // -> HTML 문서 내에서 () 내 아이디가 일치하는 요소를 얻어오겠다.
-        //const number1 = document.getElementById("input1");
-        //const number1 = document.getElementById("input1");
-        //              HTML 문서 내에서 가져오겠다 요소를 아이디가 일치하는
-        //const number2 = document.getElementById("input2");
-        
-        function plusFn() {
-            const number1 = document.getElementById("input1").value;
-            const number2 = document.getElementById("input2").value;
-            
-            // alert("number1의 값 : " + number1);
-            // alert("number2의 값 : " + number2);
-            // /*
-            //     input 요소에 작성된 값은 무조건 string이라 더했을 때
-            //     이어쓰기 되는 문제가 발생한다.
+    
+    <h3>후위연산자 (변수이름++)</h3>
+    <p>현재 b 값 : <span id="후위B">5</span></p>
+    <button onclick="후위버튼()">b++ 실행</button>
+    <div id="후위결과">결과가 여기에 표시됩니다.</div>
 
-            //     [해결방법]
-            //     문자열을 숫자로 변환해야함 Number("123") atoi
-            // */
-            // alert("두 수의 합 : " + (Number(number1) + Number(number2)));
-            // alert(Number(number1) + Number(number2));
-            /*
-            두 수의 합을 id가 "계산결과"인 요소의 내부글자로 대입하기.
-            
-            1번 HTML 코드 안에서 <> 태그 내부에 id값으로 계산결과가 작성된 태그 찾기
-            2번 찾은 태그를 const result라는 변수 이름으로 값 담아주기
-            3번 result.innerText로 수의 합을 저장해서 사용자 화면에 보여주기
-            result 뒤에는 소비자가 작성한 게산값이 아니라, 우리가 더해준 계산결과가
-            들어가야 하기 때문에 .value를 붙이지 않음.
-            */
-           const result = document.getElementById("계산결과");
-           result.innerText = Number(number1) + Number(number2);
-        }
-    </script>
+
+    <script src="../js/03_연산자.js"></script>
     <script src="../js/03_연산자_마이너스,곱하기,나누기.js"></script>
 </body>
 </html>

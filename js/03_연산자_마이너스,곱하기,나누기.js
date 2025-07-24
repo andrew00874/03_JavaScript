@@ -29,8 +29,7 @@ document(문서) : HTML 문서 파일 안에서 존재하는 메서드 기능들
 그래서, 주로 DB연결이나 Email 아이디 인증키와 같은 설정은 대문자로 작성해줌.
 
 개발자, 소비자가 작성한 값을 주고 받는 역할을 하는 변수 명칭은 소문자로 작성함.
-*/ 
-
+*/
 
 // 함수 내부에서 공통으로 사용하는 변수 명칭은 맨 위에 작성 (전역변수)
 
@@ -38,20 +37,28 @@ const num1 = document.getElementById("input1");
 const num2 = document.getElementById("input2");
 const result = document.getElementById("계산결과");
 
-function minusFn(){
-    const val1 = num1.value;
-    const val2 = num2.value;
-    result.innerHTML = Number(val1) - Number(val2);
+function minusFn() {
+  const val1 = num1.value;
+  const val2 = num2.value;
+  result.innerHTML = Number(val1) - Number(val2);
 }
 
-function multiFn(){
-    result.innerHTML = Number(num1.value) * Number(num2.value);
+function multiFn() {
+  result.innerHTML = Number(num1.value) * Number(num2.value);
 }
 
-function divFn(){
-    result.innerHTML = Number(num1.value) / Number(num2.value);
+function divFn() {
+  if (Number(num2.value) == 0) {
+    alert("cannot divide with 0!");
+    return 0;
+  }
+  result.innerHTML = Number(num1.value) / Number(num2.value);
 }
 
-function modFn(){
-    result.innerHTML = Number(num1.value) % Number(num2.value);
+function modFn() {
+  if (Number(num2.value) == 0) {
+    alert("cannot divide with 0!");
+    return 0;
+  }
+  result.innerHTML = Number(num1.value) % Number(num2.value);
 }
