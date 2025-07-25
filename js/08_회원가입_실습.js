@@ -9,7 +9,9 @@ passwordConfirm.addEventListener("keyup", function (e) {
     } else if (password.value === passwordConfirm.value) {
       passwordResult.innerHTML = "비밀번호가 일치합니다.";
     } else {
-      passwordResult.innerHTML = "비밀번호가 불일치합니다.";
+        passwordResult.innerHTML = "비밀번호가 불일치합니다.";
+        password.style.borderColor = "red";
+        passwordConfirm.style.borderColor = "red";
     }
   }
 });
