@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이벤트 실습</title>
     <link rel="stylesheet" href="../css/07_이벤트실습.css" />
-</head>
-<body>
+  </head>
+  <body>
     <h3>입력한 색상으로 배경색 변경하기</h3>
     <div id="box3"></div>
     <input type="text" id="input3" placeholder="색상입력" />
     <button id="btn3">변경하기</button>
     <script>
-        // 입력한 색상으로 배경색 변경하기
-        const box3 = document.getElementById("box3");
-        const input3 = document.getElementById("input3");
-        const btn3 = document.getElementById("btn3");
+      // 입력한 색상으로 배경색 변경하기
+      const box3 = document.getElementById("box3");
+      const input3 = document.getElementById("input3");
+      const btn3 = document.getElementById("btn3");
 
-        // #btn3를 클릭했을 때
-        input3.addEventListener("keydown", function(event){
-            if (event.key == "Enter"){
-                box3.style.backgroundColor = input3.value;
-            }
-        });
-        btn3.addEventListener("click", function(){
-            box3.style.backgroundColor = input3.value;
-        });
+      // #btn3를 클릭했을 때
+      input3.addEventListener("keydown", function (event) {
+        if (event.key == "Enter") {
+          box3.style.backgroundColor = input3.value;
+        }
+      });
+      btn3.addEventListener("click", function () {
+        box3.style.backgroundColor = input3.value;
+      });
     </script>
-    <div class = "container3">
-        <div id = "box4">
-            <input type="text" id="input4" placeholder="색상입력" />
-            <button id="btn4">색상변경하기</button>
-        </div>
+    <div class="container3">
+      <div id="box4">
+        <input type="text" id="input4" placeholder="색상입력" />
+        <button id="btn4">색상변경하기</button>
+      </div>
     </div>
-    <script>
-        const box4 = document.getElementById("box4");
-        const input4 = document.getElementById("input4");
-        const btn4 = document.getElementById("btn4");
-
-        btn4.addEventListener("click", function(){
-            box4.style.backgroundColor = input4.value;
-            btn4.style.backgroundColor = input4.value;
-        });
-        input4.addEventListener("keydown", function(event){
-           if (event.key == "Enter"){
-            btn4.style.backgroundColor = "black";
-           } 
-        });
-    </script>
-</body>
+    <script src="../js/07_이벤트실습.js"></script>
+  </body>
 </html>
