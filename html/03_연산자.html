@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_연산자</title>
+    <link rel="stylesheet" href="../css/03_연산자.css">
+</head>
+<body>
+    <h1>연산자(Operator)</h1>
+    <h3>산술 연산자 + 계산 만들기</h3>
+
+    <pre class="pretty-pre">
+        +, -, *, %(modulo), /
+    </pre>
+    <div class="계산기">
+        <div class="row">
+            <label>첫 번째 값 :
+                <input type="number" id="input1" /> <br>
+            </label>
+            <label>두 번째 값 :
+                <input type="number" id="input2" /> <br>
+            </label>
+        </div>
+        <div class="row btn-row">
+            <!-- 버튼 클릭 시 pusFn() 함수 호출 (실행)-->
+             <button onclick="plusFn()">+</button>
+             <button onclick="minusFn()">-</button>
+             <button onclick="multiFn()">*</button>
+             <button onclick="divFn()">/</button>
+             <button onclick="modFn()">%</button>
+        </div>
+    </div>
+    <div class="row">
+        <h2>result : <span id="계산결과">100</span></h2>
+    </div>
+    <div class="row">
+        <h2>증가/감소 버튼 : <span id="result2"></span></h2>
+    </div>
+    <div class="row btn-row">
+        <button onclick="증가버튼()">증가</button>
+        <button onclick="감소버튼()">감소</button>
+    </div>
+
+    <h3>전위연산자 (++변수이름)</h3>
+    <p>현재 a 값 : <span id="전위A">5</span></p>
+    <button onclick="전위버튼()">++a 실행</button>
+    <div id="전위결과">결과가 여기에 표시됩니다.</div>
+
+    
+    <h3>후위연산자 (변수이름++)</h3>
+    <p>현재 b 값 : <span id="후위B">5</span></p>
+    <button onclick="후위버튼()">b++ 실행</button>
+    <div id="후위결과">결과가 여기에 표시됩니다.</div>
+
+
+    <script src="../js/03_연산자.js"></script>
+    <script src="../js/03_연산자_마이너스,곱하기,나누기.js"></script>
+</body>
+</html>
