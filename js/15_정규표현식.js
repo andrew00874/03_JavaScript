@@ -34,13 +34,12 @@ inputPhone.addEventListener("input", (e) => {
     return;
   }
   phoneRes.classList.remove("valid", "invalid");
-
   if (phoneReg.test(phoneNum)) {
     // 유효한 경우
-    phoneRes.textContent = "valid";
+    phoneRes.textContent = "✅ 유효한 전화번호 입니다.";
     phoneRes.classList.add("valid");
   } else {
-    phoneRes.textContent = "invalid";
+    phoneRes.textContent = "❌ 유효하지 않은 전화번호 입니다.";
     phoneRes.classList.add("invalid");
   }
 });
