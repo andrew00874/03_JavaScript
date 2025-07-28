@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수(function)</title>
+</head>
+<body>
+    <h1>함수(function)</h1>
+    <pre>
+        목표하는 결과를 만들기 위한 코드의 묶음
+        -코드를 {}으로 묶어 작성하고 붙여진 이름을 호출해서 사용
+
+        * 함수 선언
+        * 함수 정의
+        * 함수 호출
+
+        [기본 함수 형태]
+
+        function 함수이름() { //함수 선언
+            //함수 정의            
+        }
+
+        함수이름(); // 함수를 단독으로 호출할 수 있다
+    </pre>
+    
+    <hr>
+    <h1>매개변수(Parameter), 전달 인자(Arguments)</h1>
+    <pre>
+        * 매개 변수 (Parameter)
+        - 함수 선언 시 ()안에 작성되는 변수
+            -> 전달 인자로부터 받은 값을 저장
+            -> 함수 정의 부분에서 사용 가능
+
+        * 전달 인자(Arguments)
+        - 함수 호출 시 ()안에 작성되는 값
+            -> 함수 매개 변수로 전달되는 값
+    </pre>
+    <input type="number" id="input1" />
+    <button id = "btn1">확인하기</button>
+    <script>
+        /* 매개변수, 전달인자 */
+        // const input1 = document.querySelector("#input1"); 
+        //     // querySelcetor -> #을 작성하지 않아도 되는 메서드로 교체
+        // const btn1 = document.querySelector("#btn1");
+
+        const input1 = document.getElementById("input1");
+        const btn1 = document.getElementById("btn1");
+        
+        /* btn1 클릭 시 #input1의 값을 읽어와 print1() 함수를 호출 하겠다. */
+
+        // 자주 사용하는 기능을 분리해서
+        // 기능 명칭으로 사용할 수 있다.
+        function print1(val, res){
+            alert(`${res}은(는) ${val}입니다.`);
+        };
+
+        btn1.addEventListener("click", function(){
+            const val = input1.value;
+            let res;
+            if (val.trim().length == 0){
+                alert("숫자를 입력해주세요.");
+                return;
+            }
+    
+            if (Number(val) == 0) {
+                res = "0";
+                alert(`입력하신 숫자는${res}, ${val}입니다.`);
+            } else if (Number(val) > 0) {
+                res = "양수";
+                alert(`입력하신 숫자는 ${res}, ${val}입니다.`);
+            } else if (Number(val) < 0) {
+                res = "음수";
+                alert(`입력하신 숫자는 ${res}, ${val}입니다.`);
+            }
+            print1(val, res);
+            print1(res, val);
+            /* 함수 호출 (값 전달) */
+            // [!! 중요 !!] 전달되는 값의 순서가 중요하다
+        });
+
+    </script>
+</body>
+</html>
