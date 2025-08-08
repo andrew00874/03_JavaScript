@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/29_크롤링_스크래핑.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+  </head>
+  <body>
+    <h1>웹 크롤링(Web Crawling)</h1>
+    <pre>
+      인터넷상의 웹페이지들을 자동으로 방문하고 탐색하여 데이터를 수집하는 과정
+      스크래핑 대신 크롤링으로 부름
+    </pre>
+    <h1>웹 스크래핑(Web Scraping)</h1>
+    <pre>
+      특정 페이지의 데이터를 추출하는 과정
+    </pre>
+    <h3>크롤링 진행하는 방법</h3>
+    <pre>
+      JS나 python 언어를 활용하여 진행
+      JS -> nodeJS 설치 후 데이터 수집 가능
+      1. nodeJS 설치
+      2. 필요한 패키지 기능 설치
+          npm install 필요한 패키지
+    </pre>
+
+    <h2>Node.js</h2>
+    <pre>
+      JS를 웹사이트 밖에서도 실행할 수 있게 해주는 런타임 환경
+      기존에는 JS를 웹브라우저에서만 사용할 수 있음
+      Node.js는 컴퓨터에서 인터넷을 통하지 않아도 직접 실행 가능
+
+      08~09 당시 JS는 웹브라우저에서만 사용 됐음
+          백엔드 개발 언어는 JAVA php python 과 같은 언어만 가능했음
+          라이언 달 : 파일 업로드 진행률을 보여주는 웹 앱 만드는 도중
+                     서버에 파일 업로드 상태를 실시간으로 확인 어려움
+                     JS => 이벤트 (행동) 기반이고, 비동기 처리를 잘함
+                           백엔드에서도 쓸 수 있다면?
+
+      ex)서버 만들기, 파일 다루기, DB 연결 등 다양한 작업 가능
+    </pre>
+    <h2>npm</h2>
+    <pre>
+      Node Package Manager 의 줄임말
+      Nodejs용 패키지(라이브러리) 관리 도구
+      다른 개발자들이 만든 유용한 코드 기능들을쉽게 설치하고 관리할 수 있게 해줌
+      https://www.npmjs.com/
+    </pre>
+    <h3>nodeJS & npm 으로 패키지(라이브러리) 도구를 설치하고 실행하는 방법</h3>
+    <pre>
+      // Node.js로 JS 파일 실행
+      node 파일이름.js // js파일 실행
+
+      // npm으로 패키지 설치
+      npm install express // 웹 서버를 만드는 패키지
+      npm install axios // http 요청 보내는 패키지 ajax랑 동일한 기능 수행
+      npm install cheerio // HTML 변환하는 패키지
+
+      위와같은 형식으로 설치하고 사용할 수 있음
+
+      크롤링 , 스크래핑을 하기 위해서 필요
+    </pre>
+    <script src="../js/29_crawling_scraping.js"></script>
+  </body>
+</html>
